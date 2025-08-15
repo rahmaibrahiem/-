@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفقة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-hands-helping"></i>
+            <h1>رفقة</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#clothes">الملابس</a></li>
+                <li><a href="#rides">النقل التشاركي</a></li>
+                <li><a href="#advice">الاستشارات</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#donations">التبرعات</a></li>
+                <li><a href="#" id="auth-btn" class="login-btn">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>معًا نصنع التغيير</h2>
+            <p>منصة آمنة للبنات لمساعدة بعضهن في مختلف المجالات</p>
+        </div>
+    </section>
+
+    <!-- قسم الملابس -->
+    <section id="clothes" class="section">
+        <h2 class="section-title"><i class="fas fa-tshirt"></i> تبادل الملابس</h2>
+        <div class="filter">
+            <select id="city-filter">
+                <option value="">جميع المدن</option>
+                <option value="القاهرة">القاهرة</option>
+                <option value="الإسكندرية">الإسكندرية</option>
+                <option value="الجيزة">الجيزة</option>
+            </select>
+            <select id="size-filter">
+                <option value="">جميع المقاسات</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </div>
+        <div class="clothes-container" id="clothes-container">
+            <!-- هملاها js-->
+        </div>
+        <button class="add-btn" id="add-clothes-btn"><i class="fas fa-plus"></i> أضفي ملابس</button>
+    </section>
+
+    <!-- قسم النقل التشاركي -->
+    <section id="rides" class="section">
+        <h2 class="section-title"><i class="fas fa-car-alt"></i> النقل التشاركي</h2>
+        <div class="rides-container" id="rides-container">
+            <!--هملاها js -->
+        </div>
+        <button class="add-btn" id="add-ride-btn"><i class="fas fa-plus"></i> أضفي رحلة</button>
+    </section>
+
+    <!-- قسم الاستشارات -->
+    <section id="advice" class="section">
+        <h2 class="section-title"><i class="fas fa-comments"></i> الاستشارات</h2>
+        <div class="advice-container" id="advice-container">
+            <!--هملاها js -->
+        </div>
+        <div class="new-advice">
+            <h3>اطرحي استشارتك</h3>
+            <input type="text" id="advice-title" placeholder="عنوان الاستشارة">
+            <textarea id="advice-content" placeholder="اكتبي استشارتك هنا..."></textarea>
+            <button id="post-advice-btn" class="cta-btn">نشر الاستشارة</button>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="section">
+        <h2 class="section-title"><i class="fas fa-store"></i> مشاريع البنات</h2>
+        <div class="projects-container" id="projects-container">
+            <!--هملاها js-->
+        </div>
+        <button class="add-btn" id="add-project-btn"><i class="fas fa-plus"></i> أضفي مشروعك</button>
+    </section>
+
+    <!-- قسم التبرعات -->
+    <section id="donations" class="section">
+        <h2 class="section-title"><i class="fas fa-hand-holding-heart"></i> التبرعات</h2>
+        <div class="donations-container" id="donations-container">
+            <!-- هملاها js-->
+        </div>
+    </section>
+
+    <!--  التسجيل -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>انضمي إلى مجتمعنا</h2>
+            <form id="register-form">
+                <input type="text" id="reg-name" placeholder="الاسم" required>
+                <input type="email" id="reg-email" placeholder="البريد الإلكتروني" required>
+                <input type="tel" id="reg-phone" placeholder="رقم الهاتف" required>
+                <input type="password" id="reg-password" placeholder="كلمة المرور" required>
+                <button type="submit" class="cta-btn">تسجيل</button>
+            </form>
+            <p class="auth-switch">لديك حساب بالفعل؟ <a href="#" id="show-login">تسجيل الدخول</a></p>
+        </div>
+    </div>
+
+    <!--  تسجيل الدخول -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>تسجيل الدخول</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="login-password" placeholder="كلمة المرور" required>
+                <button type="submit" class="cta-btn">تسجيل الدخول</button>
+            </form>
+            <p class="auth-switch">ليس لديك حساب؟ <a href="#" id="show-register">انشئ حساب جديد</a></p>
+        </div>
+    </div>
+
+    <!--  إضافة ملابس -->
+    <div id="clothes-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>إضافة ملابس</h2>
+            <form id="add-clothes-form">
+                <input type="text" id="clothes-type" placeholder="نوع الملابس" required>
+                <input type="text" id="clothes-size" placeholder="المقاس" required>
+                <input type="text" id="clothes-city" placeholder="المدينة" required>
+                <input type="file" id="clothes-image" accept="image/*">
+                <textarea id="clothes-desc" placeholder="وصف الملابس"></textarea>
+                <button type="submit" class="cta-btn">نشر</button>
+            </form>
+        </div>
+    </div>
+
+    <!--  إضافة رحلة -->
+    <div id="ride-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>إضافة رحلة</h2>
+            <form id="add-ride-form">
+                <input type="text" id="ride-from" placeholder="من" required>
+                <input type="text" id="ride-to" placeholder="إلى" required>
+                <input type="date" id="ride-date" required>
+                <input type="time" id="ride-time" required>
+                <input type="number" id="ride-seats" placeholder="عدد المقاعد" min="1" required>
+                <textarea id="ride-notes" placeholder="ملاحظات إضافية"></textarea>
+                <button type="submit" class="cta-btn">نشر الرحلة</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- إضافة مشروع -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>إضافة مشروع</h2>
+            <form id="add-project-form">
+                <input type="text" id="project-name" placeholder="اسم المشروع" required>
+                <input type="text" id="project-category" placeholder="التصنيف" required>
+                <input type="file" id="project-image" accept="image/*">
+                <textarea id="project-desc" placeholder="وصف المشروع" required></textarea>
+                <button type="submit" class="cta-btn">نشر المشروع</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- التبرع -->
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>التبرع</h2>
+            <form id="donate-form">
+                <input type="number" id="donate-amount" placeholder="المبلغ بالجنيه" min="10" required>
+                <select id="donate-method" required>
+                    <option value="">طريقة الدفع</option>
+                    <option value="vodafone">فودافون كاش</option>
+                    <option value="fawry">فوري</option>
+                    <option value="credit">بطاقة ائتمان</option>
+                </select>
+                <button type="submit" class="cta-btn">تبرع الآن</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- اخر الصفحه-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن الموقع</h3>
+                <p>منصة آمنة للبنات لمساعدة بعضهن في مختلف المجالات الحياتية</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#clothes">الملابس</a></li>
+                    <li><a href="#rides">النقل التشاركي</a></li>
+                    <li><a href="#advice">الاستشارات</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-envelope"></i> info@rafqa.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 رفقة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
